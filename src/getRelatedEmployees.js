@@ -12,10 +12,13 @@ const getRelatedEmployees = (managerId) => {
   } else {
     const managedIds = data.employees.filter((managedEmployee) => managedEmployee.managers
       .includes(managerId));
+    console.log(managedIds);
     return managedIds.map((managedEmployee) =>
       `${managedEmployee.firstName} ${managedEmployee.lastName}`);
   }
 };
+
+getRelatedEmployees('9e7d4524-363c-416a-8759-8aa7e50c0992');
 
 module.exports = { isManager, getRelatedEmployees };
 
